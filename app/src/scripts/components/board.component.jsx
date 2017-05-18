@@ -1,6 +1,7 @@
+import React from "react";
 import CardComponent from './card.component.jsx';
 
-class BoardComponent extends React.Component {
+export default class BoardComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {pairsList} from './data/pairs';
+import pairsList from "./data/pairs";
 import StatsComponent from './components/stats.component';
 import OptionsComponent from './components/options.component';
 import BoardComponent from './components/board.component';
 import StatusComponent from './components/status.component';
+import styles from '../styles/style';
+//require('../styles/style'); 
 
 class NumMemoryApp extends React.Component {
   constructor(props) {
@@ -96,7 +98,7 @@ class NumMemoryApp extends React.Component {
     }
     return (
       <div>
-        <header className="page-header row">
+        <header className="header row">
           <h1>Numeric Memory</h1>
         </header>
         <div id="game-extras" className="row">
@@ -112,6 +114,6 @@ class NumMemoryApp extends React.Component {
 
 
 ReactDOM.render(
-  <NumMemoryApp / >,
+  <NumMemoryApp />,
   document.getElementById('root')
 );

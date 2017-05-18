@@ -7,9 +7,10 @@ var OUTPUT = path.resolve(__dirname, "dist");
 var config = {
   entry: DEV + "/scripts/app.jsx",
   output: {
-    path: OUTPUT,
+    path: OUTPUT + '/',
     filename: "myCode.js"
   },
+  devtool: "inline-sourcemap",
   module: {
     loaders: [{
       test: /\.jsx$/,
@@ -18,14 +19,19 @@ var config = {
       query: {
         presets: ['react', 'es2015']
       }
-    }]    
+    },
+    {
+      test: /\.(less|css)$/,
+      loader: 'style-loader!css-loader?sourceMap!less-loader?sourceMap'
+    }
+    ]
   },
   resolve: {
-      extensions: [".js", ".jsx"],
-    },
+    extensions: [".js", ".jsx", ".css", ".less"],
+  },
   devServer: {
     inline: true,
-    port: 8080
+    port: 8084
   }
 };
 

@@ -1,4 +1,7 @@
-class StatusComponent extends React.Component {
+import React from "react";
+import ReactDOM from "react-dom";
+
+export default class StatusComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};

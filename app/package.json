@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "webpack",
     "start": "webpack-dev-server"
   },
   "author": "MonkeyHood84",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^0.28.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
     "node-libs-browser": "^2.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.17.0",
     "webpack": "^2.4.1"
   },
   "dependencies": {
