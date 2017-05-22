@@ -1,5 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var DEV = path.resolve(__dirname, "src");
 var OUTPUT = path.resolve(__dirname, "dist");
@@ -22,13 +23,22 @@ var config = {
     },
     {
       test: /\.(less|css)$/,
-      loader: 'style-loader!css-loader?sourceMap!less-loader?sourceMap'
+      loader: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: 'css-loader?sourceMap!less-loader?sourceMap',
+            })
     }
     ]
   },
   resolve: {
     extensions: [".js", ".jsx", ".css", ".less"],
   },
+  plugins: [
+    new ExtractTextPlugin({
+      filename: './main.css',
+      allChunks: true
+    })
+  ],
   devServer: {
     inline: true,
     port: 8084
